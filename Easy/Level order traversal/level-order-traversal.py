@@ -5,16 +5,16 @@
 class Solution:
     #Function to return the level order traversal of a tree.
     def levelOrder(self,root):
-        # Code here
         q=deque([root])
         ans=[]
         while q:
-            v=q.popleft()
-            ans.append(v.data)
-            if v.left:
-                q.append(v.left)
-            if v.right:
-                q.append(v.right)
+            n=len(q)
+            for i in range(n):
+                v=q.popleft()
+                if v:
+                    ans.append(v.data)
+                    q.append(v.left)
+                    q.append(v.right)
         return ans
 
 
