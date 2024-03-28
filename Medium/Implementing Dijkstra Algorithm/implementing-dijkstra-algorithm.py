@@ -12,11 +12,9 @@ class Solution:
             d,u=heapq.heappop(pq)
             for v,weight in adj[u]:
                 if dist[u]+weight<dist[v]:
-                    dist[v]=dist[u]+weight
-                    heapq.heappush (pq,(dist[v],v))
+                   dist[v]=dist[u]+weight
+                   heapq.heappush(pq,(dist[v],v))
         return dist
-
-
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
