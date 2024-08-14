@@ -1,19 +1,19 @@
-#User function Template for python3
-
 class Solution:
-    def longestCommonSubstr(self, s1, s2):
-        n=len(s1)
-        m=len(s2)
-        dp=[[0]*(m+1) for _ in range(n+1)]
-        mx=0
-        for i in range(1,n+1):
-            for j in range(1,m+1):
-                if s1[i-1]==s2[j-1]:
-                    dp[i][j]=dp[i-1][j-1]+1
-                    mx=max(mx,dp[i][j])
-        # for row in dp:
-        #     print(row)
-        return mx
+
+    def longestCommonSubstr(self, str1, str2):
+
+        n, m = len(str1), len(str2)
+        dp = [[0] * (m + 1) for _ in range(n + 1)]
+        res = 0
+
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if str1[i - 1] == str2[j - 1]:
+                    dp[i][j] = 1 + dp[i - 1][j - 1]
+                    res = max(res, dp[i][j])
+
+        return res
+
 
 #{ 
  # Driver Code Starts
